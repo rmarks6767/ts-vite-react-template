@@ -1,2 +1,2 @@
-# ts-webpack-react-template
-Boilerplate project using TS, Webpack, and React
+# ts-vite-react-template
+Boilerplate project using TS, Vite, and React
