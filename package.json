@@ -2,21 +2,26 @@
   "name": "vite-react-ts-template",
   "private": true,
   "version": "1.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "start": "node dist/server/server.js",
+    "build": "rm -rf dist && npm run build:client && npm run build:server",
+    "build:client": "tsc -p ./tsconfig.app.json && vite build",
+    "build:server": "tsc -p ./tsconfig.server.json",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "preview": "vite preview"
   },
   "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "react-router-dom": "^7.18.3"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@types/express": "^5.0.6",
     "@types/node": "^24.13.3",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
